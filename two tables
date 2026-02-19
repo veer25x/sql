@@ -19,3 +19,5 @@ insert into student2(s_id,marks,sec)
 values(001,90,'c');
 
 select * from student2;
+
+#we have only created two table;

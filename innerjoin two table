@@ -1,0 +1,32 @@
+Create table student1(
+s_id int,
+name varchar(50),
+enroll_no not null,
+dept varchar(50)
+);
+
+insert into student1(s_id,name,enroll_no,dept) values(001,'mark',23022,'cse');
+
+select*from student1;
+
+Create table student2(
+s_id int,
+marks not null,
+sec varchar(50)
+);
+
+insert into student2(s_id,marks,sec) 
+values(001,90,'c');
+
+select * from student2;
+
+SELECT 
+    student1.s_id,
+    student1.name,
+    student1.enroll_no,
+    student1.dept,
+    student2.marks,
+    student2.sec
+FROM student1
+INNER JOIN student2
+ON student1.s_id = student2.s_id;

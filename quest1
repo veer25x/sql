@@ -10,12 +10,3 @@ department varchar(50)
 );
 
 select*from employee;
-
-insert into employee values(001,'ram',50000,'IT');
-insert into employee values(002,'SHAYAM',35000,'SALES');
-insert into employee values(003,'SITA',30000,'SALES');
-insert into employee values(004,'RITA',40000,'HR');
-insert into employee values(005,'GEETA',50000,'IT');
-
-
-

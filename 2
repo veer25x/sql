@@ -1,0 +1,23 @@
+-- Create Table
+CREATE TABLE student (
+    s_no INT,
+    name VARCHAR(50),
+    class VARCHAR(50),
+    roll_no INT PRIMARY KEY
+);
+
+-- Insert Records
+INSERT INTO student VALUES (1,'veer','B.tech',2244);
+INSERT INTO student VALUES (2,'anni','B.tech',2243);
+INSERT INTO student VALUES (3,'uttu','B.tech',2242);
+INSERT INTO student VALUES (4,'shubham','B.tech',2241);
+INSERT INTO student VALUES (5,'gupta','B.tech',2240);
+
+-- Display All
+SELECT * FROM student;
+
+-- Filter Records
+SELECT * FROM student WHERE roll_no < 2242;
+
+-- Finally Drop Table (if needed)
+DROP TABLE student;

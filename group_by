@@ -1,0 +1,3 @@
+SELECT branch, AVG(marks)
+FROM Student
+GROUP BY branch;

@@ -1,0 +1,48 @@
+-- Create student1 table
+CREATE TABLE student1(
+    s_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    enroll_no INT NOT NULL,
+    dept VARCHAR(50)
+);
+
+-- Insert into student1
+INSERT INTO student1(s_id, name, enroll_no, dept) 
+VALUES (1, 'mark', 23022, 'cse');
+
+-- Create student2 table
+CREATE TABLE student2(
+    s_id INT,
+    marks INT NOT NULL,
+    sec VARCHAR(50)
+);
+
+-- Initial insert (your original)
+INSERT INTO student2(s_id, marks, sec) 
+VALUES (1, 90, 'c');
+
+-- Additional inserts for GROUP BY demo (optional, for multiple rows)
+INSERT INTO student2(s_id, marks, sec) VALUES (2, 85, 'c');
+INSERT INTO student2(s_id, marks, sec) VALUES (3, 95, 'b');
+INSERT INTO student2(s_id, marks, sec) VALUES (4, 92, 'b');
+INSERT INTO student2(s_id, marks, sec) VALUES (5, 88, 'a');
+
+#group
+SELECT 
+    sec, 
+    AVG(marks) AS avg_marks, 
+    COUNT(*) AS student_count, 
+    MAX(marks) AS max_marks
+FROM student2
+GROUP BY sec
+ORDER BY avg_marks DESC;
+
+#having
+SELECT 
+    sec, 
+    AVG(marks) AS avg_marks, 
+    COUNT(*) AS student_count
+FROM student2
+GROUP BY sec
+HAVING AVG(marks) >= 90
+ORDER BY avg_marks DESC;

@@ -8,7 +8,10 @@ CREATE TABLE students (
 
 INSERT INTO students VALUES (1, 'Veer', 20, 'AI', 85);
 INSERT INTO students VALUES (2, 'uttu', 21, 'ML', 90);
-INSERT INTO students VALUES (3, 'anni', 19, 'DS', 88);
+INSERT INTO students VALUES (3, 'madhav', 18, 'DS', 82);
+INSERT INTO students VALUES (4, 'rehman', 17, 'ML', 86);
+INSERT INTO students VALUES (5, 'akrii', 16, 'DS', 81);
+INSERT INTO students VALUES (6, 'anni', 19, 'AI', 88);
 
 SELECT * FROM students;
 

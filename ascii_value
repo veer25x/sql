@@ -1,0 +1,44 @@
+CREATE TABLE student (
+  s_no INT,
+  name VARCHAR(50),
+  class VARCHAR(50),
+  subject VARCHAR(50),
+  roll_no INT
+);
+
+INSERT INTO student VALUES (10,'nitika','b.tech','dbms',21);
+INSERT INTO student VALUES (11,'veer','b.tech','dbms',22);
+INSERT INTO student VALUES (13,'kalyani','b.tech','dbms',23);
+INSERT INTO student VALUES (14,'anni','b.tech','dbms',24);
+
+SELECT * FROM student;
+
+ALTER TABLE student 
+ADD marks INT;
+
+UPDATE student SET marks = 90 WHERE roll_no = 21;
+UPDATE student SET marks = 95 WHERE roll_no = 22;
+UPDATE student SET marks = 85 WHERE roll_no = 23;
+UPDATE student SET marks = 80 WHERE roll_no = 24;
+
+SELECT * FROM student ;
+
+select max(marks) from student;
+select min(marks) from student;
+select avg(marks) from student;
+select sum(marks) from student;
+
+-- fetch
+SELECT * FROM student;
+
+SELECT name, RTRIM(name) AS rightTrimmed_name 
+FROM student;
+SELECT REPLACE(marks,'9','0')
+FROM student;
+SELECT REPLACE(name,'nitika','kimmi') 
+FROM student;
+
+select name,
+(ascii(substring(name,3,1)))
+as ascii_value_of_third_character 
+from student;

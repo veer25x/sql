@@ -1,4 +1,3 @@
-
 -- create
 CREATE TABLE EMPLOYEE (
   empId INTEGER PRIMARY KEY,

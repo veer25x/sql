@@ -1,3 +1,4 @@
+
 CREATE TABLE student (
   s_no INT,
   name VARCHAR(50),

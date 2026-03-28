@@ -1,0 +1,6 @@
+
+-- Odd
+SELECT * FROM employees WHERE MOD(id, 2) = 1;
+
+-- Even
+SELECT * FROM employees WHERE MOD(id, 2) = 0;

@@ -7,7 +7,6 @@ CREATE TABLE customer (
   city varchar(25),
   zip int
 );
-
 -- insert
 INSERT INTO customer VALUES (1, 'Clark', 'kim', 'clark1234@gmail.com', 'delhi', 80001);
 INSERT INTO customer VALUES (2, 'Dave', 'kim', 'dave12345@gmail.com', 'mumbai', 8002);

@@ -1,0 +1,25 @@
+-- Current date/time
+SELECT CURRENT_DATE, CURRENT_TIME, NOW();
+
+-- Extract parts
+SELECT 
+    EXTRACT(YEAR FROM order_date) AS year,
+    EXTRACT(MONTH FROM order_date) AS month,
+    EXTRACT(DAY FROM order_date) AS day
+FROM orders;
+
+-- DATE formatting (MySQL)
+SELECT DATE_FORMAT(order_date, '%Y-%m-%d') FROM orders;
+
+-- Date arithmetic
+SELECT 
+    order_date,
+    DATE_ADD(order_date, INTERVAL 30 DAY) AS due_date,
+    DATEDIFF(CURRENT_DATE, order_date) AS days_ago
+FROM orders;
+
+-- PostgreSQL style
+SELECT 
+    AGE(CURRENT_DATE, birth_date) AS age,
+    DATE_PART('year', hire_date) AS hire_year
+FROM employees;

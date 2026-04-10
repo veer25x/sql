@@ -1,0 +1,29 @@
+-- ROW_NUMBER: Assign sequential numbers
+SELECT 
+    name,
+    salary,
+    ROW_NUMBER() OVER (ORDER BY salary DESC) AS rank_num
+FROM employees;
+
+-- RANK vs DENSE_RANK
+SELECT 
+    name,
+    score,
+    RANK() OVER (ORDER BY score DESC) AS rank,
+    DENSE_RANK() OVER (ORDER BY score DESC) AS dense_rank
+FROM exam_results;
+
+-- Running total
+SELECT 
+    order_date,
+    amount,
+    SUM(amount) OVER (ORDER BY order_date) AS running_total
+FROM orders;
+
+-- Partition by groups
+SELECT 
+    department,
+    name,
+    salary,
+    AVG(salary) OVER (PARTITION BY department) AS dept_avg
+FROM employees;

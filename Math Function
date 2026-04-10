@@ -1,0 +1,13 @@
+-- Basic math
+SELECT 
+    ABS(-5) AS absolute_value,
+    ROUND(3.14159, 2) AS rounded,
+    CEIL(3.2) AS ceiling,
+    FLOOR(3.9) AS floor;
+
+-- Advanced functions
+SELECT 
+    POWER(2, 3) AS power_result,
+    SQRT(16) AS square_root,
+    MOD(10, 3) AS remainder,
+    RAND() AS random_number;

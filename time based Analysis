@@ -1,0 +1,11 @@
+SELECT 
+    DATE_TRUNC('month', order_date) AS month,
+    COUNT(*) AS total_orders,
+    SUM(amount) AS revenue,
+    LAG(SUM(amount)) OVER (ORDER BY DATE_TRUNC('month', order_date)) AS prev_month_revenue,
+    ROUND(((SUM(amount) - LAG(SUM(amount)) OVER (ORDER BY DATE_TRUNC('month', order_date))) / 
+           LAG(SUM(amount)) OVER (ORDER BY DATE_TRUNC('month', order_date)) * 100), 2) AS growth_pct
+FROM orders
+WHERE order_date >= '2023-01-01'
+GROUP BY DATE_TRUNC('month', order_date)
+ORDER BY month;

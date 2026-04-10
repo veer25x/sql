@@ -1,0 +1,63 @@
+-- create
+CREATE TABLE customer (
+  C_Id INTEGER PRIMARY KEY,
+  First_name varchar(25),
+  last_name varchar(25),
+  email varchar(50),
+  city varchar(25),
+  zip int
+);
+
+-- insert
+INSERT INTO customer VALUES (1, 'Clark', 'kim', 'clark1234@gmail.com', 'delhi', 80001);
+INSERT INTO customer VALUES (2, 'Dave', 'kim', 'dave12345@gmail.com', 'mumbai', 8002);
+INSERT INTO customer VALUES (3, 'Ava', 'kim', 'ava12346@gmail.com', 'delhi', 8003);
+INSERT INTO customer VALUES (4, 'Clane', 'kim', 'clane123456@gmail.com', 'mumbai', 8004);
+INSERT INTO customer VALUES (5, 'Daven', 'kim', 'daven123457@gmail.com', 'delhi', 8005);
+INSERT INTO customer VALUES (6, 'Ava', 'kim', 'ava123468@gmail.com', 'goa', 8006);
+
+-- Queries
+
+-- 1. First_name and last_name
+SELECT First_name, last_name FROM customer;
+
+-- 2. Names starting with 'D' and city = 'delhi'
+SELECT * FROM customer
+WHERE First_name LIKE 'D%' AND city = 'delhi';
+
+-- 3. All customers with Gmail email
+SELECT * FROM customer
+WHERE email LIKE '%@gmail.com';
+
+-- 4. First_name that does NOT end with 'a'
+SELECT * FROM customer
+WHERE First_name NOT LIKE '%a';
+
+-- Add date column
+ALTER TABLE customer
+ADD COLUMN join_date DATE;
+
+-- Set specific dates for each customer
+UPDATE customer
+SET join_date = '2025-03-10'
+WHERE C_Id = 1;
+
+UPDATE customer
+SET join_date = '2025-03-11'
+WHERE C_Id = 2;
+
+UPDATE customer
+SET join_date = '2025-03-12'
+WHERE C_Id = 3;
+
+UPDATE customer
+SET join_date = '2025-03-13'
+WHERE C_Id = 4;
+
+UPDATE customer
+SET join_date = '2025-03-14'
+WHERE C_Id = 5;
+
+UPDATE customer
+SET join_date = '2025-03-15'
+WHERE C_Id = 6;

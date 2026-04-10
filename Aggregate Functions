@@ -1,0 +1,21 @@
+-- COUNT: Count rows
+SELECT COUNT(*) AS total_customers FROM customers;
+SELECT COUNT(DISTINCT country) FROM customers;
+
+-- SUM: Add up values
+SELECT SUM(amount) AS total_sales FROM orders;
+
+-- AVG: Calculate average
+SELECT AVG(price) AS avg_price FROM products;
+
+-- MIN/MAX: Find extremes
+SELECT MIN(salary) AS lowest, MAX(salary) AS highest FROM employees;
+
+-- GROUP BY with aggregates
+SELECT 
+    department,
+    COUNT(*) as emp_count,
+    AVG(salary) as avg_salary,
+    SUM(salary) as total_salary
+FROM employees
+GROUP BY department;

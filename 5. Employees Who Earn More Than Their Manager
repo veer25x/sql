@@ -1,4 +1,3 @@
-
 SELECT e.name
 FROM employees e
 JOIN employees m

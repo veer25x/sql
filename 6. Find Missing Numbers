@@ -1,4 +1,3 @@
-
 SELECT t1.id + 1 AS missing_id
 FROM table1 t1
 LEFT JOIN table1 t2
